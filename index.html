@@ -1,0 +1,673 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>html5</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+			window.onload = function (){
+				document.onscroll= ()=>{
+					let htop = document.querySelector(".h_top");
+					let hbottom = document.querySelector(".h_bottom");
+					let header = document.querySelector(".header");
+					let sear = document.querySelector(".sear");
+					console.log(window.pageYOffset);
+					if(window.pageYOffset>=80){
+						htop.style.position = "fixed";
+						htop.style.zIndex = "9999";
+						htop.style.top = "0";
+						hbottom.style.marginTop = "40px";
+						header.style.height ="120px";
+					}else{
+						htop.style.position = null;
+						hbottom.style.marginTop = null;
+						header.style.height = null;
+					}
+					if(window.pageYOffset>=332){
+						sear.style.position = "fixed";
+						sear.style.zIndex = "9999";
+						sear.style.top = "40px";
+					}else {
+						sear.style.position = null;
+						sear.style.zIndex = null;
+						sear.style.top = null;
+					}
+
+				}
+			//	轮播
+				let banImg = document.getElementsByClassName("banImg");
+				let banImgBox = document.getElementsByClassName("banImgBox");
+				let btnLeft = document.getElementsByClassName("btnLeft");
+				let btnRight = document.getElementsByClassName("btnRight");
+				var x = 0;
+				//图片数量
+				var max = 3;
+				function  timeinter(){
+					x+= 860;
+					if (x>860*(max-1)){
+						x=0;
+					}
+					banImgBox[0].style.transform = "translateX(-" + x + "px)";
+				}
+				var timer = setInterval(timeinter,3000)
+
+			//	轮播点击事件 左
+				btnLeft[0].onclick = function () {
+					x-= 860;
+					clearInterval(timer);
+					if (x<0){
+						x=860;
+					}
+					banImgBox[0].style.transform = "translateX(-" + x + "px)";
+					timer = setInterval(timeinter,3000);
+				}
+				btnRight[0].onclick = function () {
+					x+= 860;
+					clearInterval(timer);
+					if (x>860*(max-1)){
+						x=0;
+					}
+					banImgBox[0].style.transform = "translateX(-" + x + "px)";
+					timer = setInterval(timeinter,3000);
+				}
+			}
+
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="box">
+			<a rel="nofollow" href="https://zhuanti.lagou.com/kuanghuanjie.html" style="" target="_blank" data-lg-tj-id="bd00" data-lg-tj-no="idnull" data-lg-tj-cid="13384" class=""></a>
+			<div class="header">
+				<div class="h_top">
+					<div class="topCon mian clearFixed">
+						<div class="conLeft fl">
+							<div class="leftTxt1 fl">
+								<a href="" class="logo">拉钩</a>
+								<a href="" class="city">全国站</a>
+								<a href="" class="city1">[切换城市]</a>
+							</div>
+							<ul class="ulList clearFixed fl">
+								<li><a href="#">首页</a></li>
+								<li><a href="#">公司</a></li>
+								<li><a href="#">校园</a></li>
+								<li><a href="#">言职</a></li>
+								<li><a href="#">课程</a></li>
+							</ul>
+						</div>
+						<div class="conRight fr">
+							<ul class="ulList clearFixed">
+								<li><a href="" class="login btn"><span></span>登录</a></li>
+								<li><a href="" class="login2"><span>|</span>注册</a></li>
+								<li><a href="" class="btn app"><span></span>拉钩APP</a></li>
+								<li><a href="demo.html" target="_blank">进入企业版</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="h_bottom">
+					<div class="botCon mian">
+						<div class="conLeft fl">
+							<div class="imgBox">
+								<img src="img/footer_lagou.png" alt="" />
+							</div>
+							<div class="txtBox">7555585家公司|67676767个职位在拉钩等你</div>
+						</div>
+						<div class="conRight fr">
+							<div class="btnBox">
+								<input type="text" placeholder="输入手机号" class="fl txt1" />
+							<p class="fl pBtn">
+								<input type="text" placeholder="验证码" class="txt2" />
+								|
+								<a href="" class="aTxt2">获取</a>
+							</p>
+							<input type="submit" value="登录/注册" class="fl btnSub" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sear">
+				<div class="searCon mian">
+					<div class="search">
+						<input type="text" placeholder="搜索公司,搜索职位或地点" class="searchInp fl" />
+						<a href="" class="btn fl">搜索</a>
+					</div>
+					<ul class="searList clearFixed">
+						<li><a href="">热门搜索 :</a></li>
+						<li><a href="">24小时极速入职</a></li>
+						<li><a href="">名企校招早班车</a></li>
+						<li><a href="">Java面试</a></li>
+						<li><a href="">架构设计</a></li>
+						<li><a href="">数据分析</a></li>
+						<li><a href="">PHP</a></li>
+						<li><a href="">C++</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="banner">
+				<div class="bannCon mian clearFixed">
+					<div class="banLeft fl">
+						<ul class="banList">
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							<li>
+								<a href="">技术</a>
+								<a href="">Java</a>
+								<a href="">PHP</a>
+								<a href="">区块链</a>
+								<span class="fr">&gt;</span>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="banRight fr">
+						<div class="banImgBox">
+							<img src="img/banner.JPG" class="banImg" alt="" />
+							<img src="https://www.lgstatic.com/i/image/M00/72/74/CgqCHl_DWhmAeuAGAAFzgqdeFqk130.JPG" class="banImg" alt="" />
+							<img src="https://www.lgstatic.com/i/image/M00/72/74/CgqCHl_DWhmAeuAGAAFzgqdeFqk130.JPG" class="banImg" alt="" />
+						</div>
+						<a href="javascript:;"><span class="btnLeft">&lt;</span></a>
+						<a href="javascript:;"><span class="btnRight">&gt;</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="content mian">
+				<div class="line1">
+					<div class="lineTop">
+						<div class="top1">
+							<a href="" class="hotBtn">24Hour热门</a>
+							<a href="" class="newBtn">最新职位</a>
+						</div>
+						<div class="top2">
+							<span class="fl">?</span>
+							<a href="" class="fl">在过去的24小时,最多人看过的岗位在这里</a>
+							<a href="" class="fl">我知道了</a>
+						</div>
+					</div>
+					<ul class="conUl">
+						<li class="clearFixed">
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clearFixed">
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="clearFixed">
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+							<div class="conBox fl">
+								<p class="job clearFixed">
+									<span class="jobTxt fl">Java开发工程师</span>
+									<span class="time btn fl">[10:35发布]</span>
+									<img class="fl" src="img/icon_chat.png" alt="" />
+									<span class="money fr">10K-15K</span>
+								</p>
+								<p class="btn btn2">经验5-10年/大专</p>
+								<p class="clearFixed  pBor">
+									<span class="btn fl spa">电商</span>
+									<span class="btn fl spa">移动互联网</span>
+								</p>
+								<div class="imgBox clearFixed">
+									<img src="img/con2.png" class="fl" alt="" />
+									<div class="imgTxt fl">
+										<p class="txt1">长沙千锋教育科技有限公司</p>
+										<p class="txt2">教育/未融资/长沙</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<p class="more">查看更多</p>
+				</div>
+				<div class="line2">
+					<div class="lineTop">
+						<div class="top1">
+							<a href="" class="hotBtn">互联网热门公司榜</a>
+						</div>
+						<div class="top2">
+							<span class="fl">?</span>
+							<a href="" class="fl">在过去的24小时,最多人看过的岗位在这里</a>
+							<a href="" class="fl">我知道了</a>
+						</div>
+					</div>
+					<div class="con2Box clearFixed">
+						<div class="listBox  fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+						<div class="listBox fl">
+							<img src="img/con2.png" alt="" />
+							<span class="spa1">数据堂</span>
+							<p class="txt1">数据服务,数据服务</p>
+							<p class="txt2">发掘数据的价值,便利人们的生活,让人们怎么怎么样,哈哈哈</p>
+							<div class="listCon clearFixed">
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+								<div class="box1 fl">
+									<p>20</p>
+									面试评价
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="more">查看更多</p>
+				</div>
+				<div class="line3">
+					<div class="lineTop">
+						<div class="top1">
+							<a href="" class="hotBtn">友情链接</a>
+						</div>
+						<div class="btnCon">
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<a href="">照片</a>
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<a href="">照片</a>
+							<a href="">拉勾网</a>
+							<a href="">教师网</a>
+							<a href="">照片</a>
+							<p class="fr openTxt">展开<img src="img2/open.jpg" alt="" class="fr" /></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="fooTop mian">
+					<div class="appBox fl">
+						<p class="btnApp"><span></span>下载拉钩APP</p>
+						<p class="btnApp"><span></span>微信小程序</p>
+						<p class="btnTxt">
+							<img src="img2/icon-wechat.png" alt="" />拉钩微信
+							<img src="img2/icon-sina1.png" alt="" />拉钩微博
+						</p>
+					</div>
+					<dl class="fl">
+						<dt>企业服务</dt>
+						<dd>招聘抢人宝典</dd>
+						<dd>公司搜索</dd>
+						<dd>拉钩APP</dd>
+					</dl>
+					<dl class="fl dlCen">
+						<dt>企业服务</dt>
+						<dd>招聘抢人宝典</dd>
+						<dd>公司搜索</dd>
+						<dd>拉钩APP</dd>
+					</dl>
+					<dl class="fl">
+						<dt>企业服务</dt>
+						<dd>招聘抢人宝典</dd>
+						<dd>公司搜索</dd>
+						<dd>拉钩APP</dd>
+					</dl>
+				</div>
+				<div class="fooBottom">
+					<div class="bottCon mian">
+						<p class="txtP1 fl">&copy;2018 拉勾网 京ICP备12312343</p>
+						<p class="txtP2 fl"><span class="fl"></span>京公安网备 110108099987658776号</p>
+						<div class="txtBox fl">
+							<span class="fl"></span>
+							<p class="fl">
+								违法和不良信息举报<br>
+								电话:4007878<br>
+								邮箱:cc@lagou.com
+							</p>
+						</div>
+						<div class="fr imgBox"><img src="img/footer_lagou.png" alt="" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
